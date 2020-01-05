@@ -118,9 +118,7 @@ const IndexPage = () => (
             <Input placeholder="Enter email" />
             <Button>Join waitlist</Button>
           </InputContainer> */}
-          <Button href="https://app.cataloged.co/" target="__blank">
-            Enter
-          </Button>
+          <Button href="https://app.cataloged.co/">Enter</Button>
         </HorizantalCenter>
       </Main>
     </Container>
