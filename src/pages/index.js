@@ -74,9 +74,7 @@ const Button = styled.a`
   background-color: #ffcc5b;
   font-family: "Cooper BT";
   font-size: 25px;
-  padding: 10px;
   padding: 10px 30px;
-  margin-left: 20px;
   cursor: pointer;
 
   margin-top: 60px;
