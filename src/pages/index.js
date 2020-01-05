@@ -1,4 +1,7 @@
 import React from "react"
+import Helmet from "react-helmet"
+
+import favicon from "../images/favicon.png"
 
 import styled, { createGlobalStyle } from "styled-components"
 
@@ -26,7 +29,7 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
 `
 
 export const Main = styled.div`
@@ -42,9 +45,23 @@ const Title = styled.div`
   padding: 30px;
   border: 10px solid #000;
 
-  @media (max-width: 768px) {
-    font-size: 120px;
-    flex-direction: column;
+  @media (max-width: 425px) {
+    font-size: 60px;
+    padding: 15px;
+
+    border: 5px solid #000;
+  }
+`
+
+const Desctription = styled.div`
+  font-size: 30px;
+  font-family: "Cooper BT";
+  color: black;
+
+  margin-top: 20px;
+
+  @media (max-width: 425px) {
+    font-size: 20px;
   }
 `
 
@@ -52,14 +69,17 @@ const InputContainer = styled.div`
   margin-top: 50px;
 `
 
-const Button = styled.button`
+const Button = styled.a`
   color: white;
   background-color: #ffcc5b;
   font-family: "Cooper BT";
   font-size: 25px;
   padding: 10px;
+  padding: 10px 30px;
   margin-left: 20px;
   cursor: pointer;
+
+  margin-top: 60px;
 
   border: none;
   -webkit-appearance: none;
@@ -80,17 +100,27 @@ const Input = styled.input`
 
 const IndexPage = () => (
   <>
+    <Helmet
+      title="Cataloged"
+      link={[{ rel: "shortcut icon", type: "image/png", href: `${favicon}` }]}
+    />
     <GlobalStyles />
     <Container>
       <Main>
         <HorizantalCenter>
-          <Title>Hullabaloo</Title>
+          <Title>Cataloged</Title>
         </HorizantalCenter>
         <HorizantalCenter>
-          <InputContainer>
+          <Desctription>Organize what's important to you</Desctription>
+        </HorizantalCenter>
+        <HorizantalCenter>
+          {/* <InputContainer>
             <Input placeholder="Enter email" />
             <Button>Join waitlist</Button>
-          </InputContainer>
+          </InputContainer> */}
+          <Button href="https://app.cataloged.co/" target="__blank">
+            Enter
+          </Button>
         </HorizantalCenter>
       </Main>
     </Container>
